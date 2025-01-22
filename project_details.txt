@@ -1,0 +1,19 @@
+Fully featured api that includes:
+- Authentication
+- CRUD Operation
+- Validation
+- Documentation
+
+Extends to other technologies:
+- SQL using postgres
+- Integrate SQL into API using Raw queries and ORM such as sqlalchemy
+- database migration tools like Alembic
+- Postman to construct http packets, to perform automated integration test
+- Deployment to an UBuntu machine hosted on a cloud provider
+- NGINX as a reverse [proxy]
+- Configure system de-service, set up firewall to block all non https traffic and ssl to handle https traffic
+- Deploying into Heroku
+- Docker
+- Building a CI/CD pipeline using GitHub Actions
+
+
