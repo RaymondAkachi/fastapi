@@ -17,11 +17,13 @@ def create_users(user: schemas.UserCreate, db: Session = Depends(get_db)):
     user.password = hashed_password
 
     new_user = models.User(**user.model_dump())
-
-    db.add(new_user)
-    db.commit()
-    db.refresh(new_user)
-
+    try:
+        db.add(new_user)
+        db.commit()
+        db.refresh(new_user)
+    except Exception:
+        raise HTTPException(status_code=status.HTTP_403_FORBIDDEN,
+                            detail=f"This user already exists")
     return new_user
 
 
